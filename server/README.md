@@ -104,3 +104,103 @@ Response Status : 500
     }
 ---------------------------------------------------------------
 ```
+
+### Get Pokemons List :
+
+```sh
+URL: http://localhost:3000/pokeapi/pokemon
+METHOD : GET
+
+Response Status : 200
+[
+    {
+        "count": 964,
+        "next": "https://pokeapi.co/api/v2/pokemon?offset=20&limit=20",
+        "previous": null,
+        "results": [
+            {
+                "name": "bulbasaur",
+                "url": "https://pokeapi.co/api/v2/pokemon/1/"
+            },
+    },
+    {...},
+    {...}
+]
+
+Response Status : 500
+    {
+        "message": "Internal Server Error!"
+    }
+---------------------------------------------------------------
+```
+
+### Get Pokemon Details :
+
+```sh
+URL: http://localhost:3000/pokeapi/pokemon/?pokeidx
+METHOD : GET
+QUERY: 
+    - pokeidx (string) : name of the pokemon or the pokemon_id
+
+Response Status : 200
+{
+    "abilities": [
+        {
+            "ability": {
+                "name": "lightning-rod",
+                "url": "https://pokeapi.co/api/v2/ability/31/"
+            },
+            "is_hidden": true,
+            "slot": 3
+        },
+        {...}
+    ],
+    "forms": [
+        {
+            "name": "pikachu",
+            "url": "https://pokeapi.co/api/v2/pokemon-form/25/"
+        }
+    ],
+    "id": 25,
+    "name": "pikachu",
+    "species": {
+        "name": "pikachu",
+        "url": "https://pokeapi.co/api/v2/pokemon-species/25/"
+    },
+    "sprites": {
+        "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/25.png",
+        "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/25.png",
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/25.png",
+        "back_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/female/25.png",
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
+        "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/25.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/25.png",
+        "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/25.png"
+    },
+    "stats": [
+        {
+            "base_stat": 90,
+            "effort": 2,
+            "stat": {
+                "name": "speed",
+                "url": "https://pokeapi.co/api/v2/stat/6/"
+            }
+        },
+        {...}
+    ],
+    "types": [
+        {
+            "slot": 1,
+            "type": {
+                "name": "electric",
+                "url": "https://pokeapi.co/api/v2/type/13/"
+            }
+        }
+    ]
+}
+
+Response Status : 500
+    {
+        "message": "Internal Server Error!"
+    }
+----
