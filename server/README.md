@@ -73,3 +73,34 @@ Response Status : 400
     }
 ```
 ------------------------------------------------------
+
+### Get Dota Heroes :
+
+```sh
+URL: http://localhost:3000/dota/heroes
+METHOD : GET
+
+Response Status : 200
+ [
+    {
+        "id": 1,
+        "name": "Anti-Mage",
+        "primary_attr": "agi",
+        "attack_type": "Melee",
+        "roles": [
+            "Carry",
+            "Escape",
+            "Nuker"
+        ],
+        "img": "https://api.opendota.com/apps/dota2/images/heroes/antimage_full.png?",
+        "cm_enabled": true
+    },
+    {...},
+    {...}
+]
+Response Status : 500
+    {
+        "message": "Internal Server Error!"
+    }
+---------------------------------------------------------------
+```
