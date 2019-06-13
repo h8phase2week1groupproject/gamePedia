@@ -2,9 +2,9 @@ const serverUrl = 'http://localhost:3000';
 
 function onSignIn(googleUser) {
     const idToken = googleUser.getAuthResponse().id_token;
-    console.log('masuk dari google')
+    // console.log('masuk dari google')
     axios
-    .post(`${serverUrl}/googleSignIn`, { idToken })
+    .post(`${serverUrl}/users/googleSignIn`, { idToken })
     .then(({ data }) => {
         localStorage.setItem('token', data.token);
         localStorage.setItem('picture', data.picture);
@@ -106,10 +106,10 @@ function login(email, password){
 }
 
 function signOut() {
-    // var auth2 = gapi.auth2.getAuthInstance();
-    // auth2.signOut().then(function () {
-    //   console.log('User signed out.');
-    // });
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
     userLogout();
   }
 
