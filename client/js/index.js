@@ -56,13 +56,27 @@ $(()=>{
     })
    
     $('#dota_link').on('click', () => {
+        $('#page_pokemon').hide()
         $('#search_form').show()
         $('#dota_link').addClass('active')
+        $('#pokemon_link').removeClass('active')
         $('#listRepo').empty()
         $('#loading').show()
         $('#search_form').hide()
         $('#list_hero').empty()
         listHeroesDota()
+    })
+
+    $('#pokemon_link').on('click', () => {
+        $('#search_form').show()
+        $('#dota_link').removeClass('active')
+        $('#pokemon_link').addClass('active')
+        $('#listRepo').empty()
+        $('#loading').show()
+        $('#search_form').hide()
+        $('#list_hero').empty()
+        listPokemon()
+        page_pokemon()
     })
 
     $('#brandLogo').on('click', () => {

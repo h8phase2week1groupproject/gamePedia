@@ -37,6 +37,12 @@
         h3, .brand-logo {
             font-family: 'Cabin Sketch', cursive;
         }
+        .row {
+            margin-bottom: 0px;
+            margin-top: 0px;
+            padding-bottom: 0px;
+            padding-top: 0px;
+        }
     </style>
     <title>GamePedia</title>
 </head>
@@ -154,9 +160,9 @@
                     <span id="count_dotaHero" class="badge">
                     </span>Dota
                 </a>
-                <a id="irsyahms" href="#!" class="collection-item">
-                    <span id="count_pikachu" class="badge">
-                    </span>Pikachu
+                <a href="#!" class="collection-item" id="pokemon_link">
+                    <span id="count_pokemon" class="badge">
+                    </span>Pokemon
                 </a>
     
             </div>
@@ -193,6 +199,11 @@
                 </div>
             </div>
 
+            <!-- Pagination -->
+            <ul id='page_pokemon' class="pagination">
+                
+            </ul>
+
             <!-- list area -->
             <div class="row" >
                 <ul id="list_hero">
@@ -204,7 +215,7 @@
         
 
         <!-- right -->
-        <div id="right_content" class="col s12 m4 l4">
+        <div id="right_content" class="col s12 m5 l5">
             <!-- loading -->
             <div id="loading" class="row">
                 <div class="col m4 offset-m5 s6 offset-s5">
@@ -221,7 +232,12 @@
                     </div>
                 </div>
             </div>
-            <h2>Detail Here</h2>
+            <h2 id='title_heroes'></h2>
+            <img id='img_heroes1' src="">
+            <img id='img_heroes2' src="">
+            <div id='detail_heroes'>
+                
+            </div>
         </div>
     </div>
 
@@ -237,7 +253,8 @@
     <script type="text/javascript" src="./js/index.js"></script>
     <script type="text/javascript" src="./js/user.js"></script>
     <script type="text/javascript" src="./js/dota.js"></script>
-<script>
+    <script type="text/javascript" src="./js/pokemon.js"></script>
+    <script>
         const sideNav = document.querySelectorAll('.sidenav');
         M.Sidenav.init(sideNav)
     </script>
