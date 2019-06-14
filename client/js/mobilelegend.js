@@ -22,7 +22,7 @@ function listHeroesMobileLegend(){
             <div class="col s12 m12">
                 <div class="card horizontal">
                 <div class="card-image">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpkoa-oJBO8I3TFhwByzStTa6GZ1OHjiyJSL63QqOJfFlKGgaNeQ" >
+                    <img src="ml/${element.key}" >
                 </div>
                 <div class="card-stacked">
                     <div class="card-content">

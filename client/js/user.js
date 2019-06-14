@@ -130,6 +130,9 @@ function userLogin(name){
     $('.userprofile').append(`Hai, ${name}`)
     $('#login_email_valid').hide()
     $('#login_email_empty').hide()
+    $("#resultsYoutube").empty()
+    $('#mobile_legend_link').removeClass('active')
+
     listHeroesDota()
 }
 

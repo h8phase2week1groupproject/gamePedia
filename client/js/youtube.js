@@ -1,6 +1,7 @@
 function cariVideo(character, game){
     $("#resultsYoutube").empty()
     $('#loading_detail').show()
+
     console.log('show youtube', character, game)
     $.ajax({
         url:`https://www.googleapis.com/youtube/v3/search`,
@@ -23,7 +24,7 @@ function cariVideo(character, game){
                 `
                 <h2>${character}</h2>
                 <div class="item">
-                    <iframe class="video w100" width="640" height="355" center-align src="//www.youtube.com/embed/${el.id.videoId}" frameborder="0" allowfullscreen></iframe>
+                    <iframe class="video w100" width="100%" height="355" center-align src="//www.youtube.com/embed/${el.id.videoId}" frameborder="0" allowfullscreen></iframe>
                 </div>`
             );     
         });
