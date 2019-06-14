@@ -71,6 +71,8 @@ $(()=>{
         $('#loading').show()
         $('#search_form').hide()
         $('#list_hero').empty()
+        $('#page_pokemon').hide()
+        emptyPokemon()
         listHeroesDota()
     })
 
@@ -84,6 +86,7 @@ $(()=>{
         $('#search_form').hide()
         $('#list_hero').empty()
         $("#resultsYoutube").empty()
+        emptyPokemon()
         listPokemon()
         page_pokemon()
     })
@@ -98,6 +101,8 @@ $(()=>{
         $('#loading').show()
         $('#search_form').hide()
         $('#list_hero').empty()
+        $('#page_pokemon').hide()
+        emptyPokemon()
         listHeroesMobileLegend()
     })
 

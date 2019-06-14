@@ -163,3 +163,10 @@ function getDetailPokemon(pokemonName) {
 
     })
 }
+
+function emptyPokemon() {
+    $('#detail_heroes').empty()
+    $('#title_heroes').html('')
+    $('#img_heroes1').attr("src", '')       
+    $('#img_heroes2').attr("src", '')      
+}
