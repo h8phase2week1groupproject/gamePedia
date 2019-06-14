@@ -64,6 +64,7 @@ $(()=>{
         $('#search_form').show()
         $('#dota_link').addClass('active')
         $('#pokemon_link').removeClass('active')
+        $('#clashRoyale_link').removeClass('active')
         $('#mobile_legend_link').removeClass('active')
         $("#resultsYoutube").empty()
         $('#myInput').val('')
@@ -80,6 +81,7 @@ $(()=>{
         $('#search_form').show()
         $('#dota_link').removeClass('active')
         $('#mobile_legend_link').removeClass('active')
+        $('#clashRoyale_link').removeClass('active')
         $('#pokemon_link').addClass('active')
         $('#listRepo').empty()
         $('#loading').show()
@@ -94,6 +96,7 @@ $(()=>{
     $('#mobile_legend_link').on('click', () => {
         $('#dota_link').removeClass('active')
         $('#pokemon_link').removeClass('active')
+        $('#clashRoyale_link').removeClass('active')
         $('#mobile_legend_link').addClass('active')
         $("#resultsYoutube").empty()
         $('#myInput').val('')
@@ -119,6 +122,8 @@ $(()=>{
         $('#loading').show()
         $('#search_form').hide()
         $('#list_hero').empty()
+        $('#page_pokemon').hide()
+        emptyPokemon()
         listCard()
     })
 
