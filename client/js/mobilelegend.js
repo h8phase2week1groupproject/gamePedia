@@ -1,6 +1,6 @@
-function listHeroesDota(){
+function listHeroesMobileLegend(){
     $.ajax({
-        url: `${serverUrl}/dota/heroes`,
+        url: `${serverUrl}/mobileLegend/heroes`,
         method: 'GET',
         headers:{
             token : localStorage.getItem('token')
@@ -8,12 +8,12 @@ function listHeroesDota(){
     })
     .done((heroes) => {
         $('#list_hero').empty()
-        $('#dota_link').addClass('active')
+        $('#mobile_legend_link').addClass('active')
     
         $('#loading').hide()
         $('#search_form').show()
-        $(`#count_dotaHero`).empty()
-        $(`#count_dotaHero`).append(`
+        $(`#count_mobile_legend`).empty()
+        $(`#count_mobile_legend`).append(`
             ${heroes.length} Heroes
         `)
         heroes.forEach(element => {
@@ -22,15 +22,14 @@ function listHeroesDota(){
             <div class="col s12 m12">
                 <div class="card horizontal">
                 <div class="card-image">
-                    <img src="${element.img}" >
+                    <img src="ml/${element.key}" >
                 </div>
                 <div class="card-stacked">
                     <div class="card-content">
                     <h5>${element.name}.</h5>
-                    <p>Attack Type: ${element.attack_type}.</p>
                     </div>
                     <!-- youtube start -->
-                    <a onclick="cariVideo('${element.name}', 'dota')" class="waves-effect waves-light btn modal-trigger" id="showYoutube" href="#modal1">Show Video</a>
+                    <a onclick="cariVideo('${element.name}', 'mobile legend')" class="waves-effect waves-light btn modal-trigger" id="showYoutube" href="#modal1">Show Video</a>
                     <!-- youtube end -->
                 </div>
                 </div>

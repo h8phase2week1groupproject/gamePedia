@@ -34,7 +34,7 @@
         #loading_left, #loading_center, #loading_right{
             margin-top:20px;
         }
-        h3, .brand-logo {
+        h2, h3, h5, p, .brand-logo {
             font-family: 'Cabin Sketch', cursive;
         }
         .row {
@@ -100,6 +100,12 @@
                         </div>
                         <button id="login_button" class="btn" type="submit">Sign In</button>
                         <p>Not a member? <a class="register_link" href="#!">Register</a></p>
+                        <p>Or Sign In with: 
+                            <div class="row">
+                                <div class="col offset-m4 offset-s4">
+                                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                                </div>
+                            </div>
                     </form>
                 </div>
             </div>
@@ -153,7 +159,7 @@
             <!-- left -->
             <div class="collection col s12 m12">
                 <ul class="collection with-header">
-                    <li class="collection-header"><h3>GamePedia</h3></li>
+                    <li class="collection-header"><h3>Games</h3></li>
                 </ul>
 
                 <a href="#!" class="collection-item" id="dota_link">
@@ -164,7 +170,10 @@
                     <span id="count_pokemon" class="badge">
                     </span>Pokemon
                 </a>
-    
+                <a id="mobile_legend_link" href="#!" class="collection-item">
+                    <span id="count_mobile_legend" class="badge">
+                    </span>Mobile Legend
+                </a>
             </div>
         </div>
 
@@ -208,7 +217,9 @@
             <div class="row" >
                 <ul id="list_hero">
                     <!-- list show here -->
+                    
                 </ul>
+                
             </div>
 
         </div>
@@ -217,7 +228,7 @@
         <!-- right -->
         <div id="right_content" class="col s12 m5 l5">
             <!-- loading -->
-            <div id="loading" class="row">
+            <div id="loading_detail" class="row">
                 <div class="col m4 offset-m5 s6 offset-s5">
                     <div class="preloader-wrapper big active center">
                         <div class="spinner-layer spinner-blue-only">
@@ -238,6 +249,9 @@
             <div id='detail_heroes'>
                 
             </div>
+            <div id="resultsYoutube">
+                <!-- youtube result -->
+            </div>
         </div>
     </div>
 
@@ -254,6 +268,8 @@
     <script type="text/javascript" src="./js/user.js"></script>
     <script type="text/javascript" src="./js/dota.js"></script>
     <script type="text/javascript" src="./js/pokemon.js"></script>
+    <script type="text/javascript" src="./js/mobilelegend.js"></script>
+    <script type="text/javascript" src="./js/youtube.js"></script>
     <script>
         const sideNav = document.querySelectorAll('.sidenav');
         M.Sidenav.init(sideNav)
