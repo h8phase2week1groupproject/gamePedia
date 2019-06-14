@@ -1,6 +1,10 @@
 $(()=>{
     $('#loading').show()
+    $('#loading_detail').hide()
     $('#search_form').hide()
+    $('#list_hero').empty()
+    $("#resultsYoutube").empty()
+    
     if (localStorage.getItem('token')){
         userLogin(localStorage.getItem('name'))
     }else{
@@ -62,6 +66,7 @@ $(()=>{
         $('#loading').show()
         $('#search_form').hide()
         $('#list_hero').empty()
+
         listHeroesDota()
     })
 
@@ -92,6 +97,12 @@ $(()=>{
     });
 
     $("#myInput").on("enter", function() {
+        let value = $(this).val().toLowerCase();
+        $("#list_hero li").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+    $("#myInput").on("submit", function() {
         let value = $(this).val().toLowerCase();
         $("#list_hero li").filter(function() {
           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
