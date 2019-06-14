@@ -8,6 +8,7 @@ module.exports = function (req, res, next) {
             email: decoded.email
         })
             .then(user => {
+                console.log(user)
                 if (user) {
                     req.decoded = decoded;
                     next()

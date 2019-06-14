@@ -2,8 +2,14 @@ function listHeroesDota(){
     $.ajax({
         url: `${serverUrl}/dota/heroes`,
         method: 'GET',
+        headers:{
+            token : localStorage.getItem('token')
+        }
     })
     .done((heroes) => {
+        $('#list_hero').empty()
+        $('#dota_link').addClass('active')
+    
         $('#loading').hide()
         $('#search_form').show()
         $(`#count_dotaHero`).empty()
@@ -16,15 +22,16 @@ function listHeroesDota(){
             <div class="col s12 m12">
                 <div class="card horizontal">
                 <div class="card-image">
-                    <img src="${element.img}" style="width: 100%">
+                    <img src="${element.img}" >
                 </div>
                 <div class="card-stacked">
                     <div class="card-content">
-                    <p>${element.name}.</p>
+                    <h5>${element.name}.</h5>
+                    <p>Attack Type: ${element.attack_type}.</p>
                     </div>
-                    <div class="card-action">
-                    <a href="#">Show Video</a>
-                    </div>
+                    <!-- youtube start -->
+                    <a onclick="cariVideo('${element.name}', 'dota')" class="waves-effect waves-light btn modal-trigger" id="showYoutube" href="#modal1">Show Video</a>
+                    <!-- youtube end -->
                 </div>
                 </div>
             </div>
@@ -33,13 +40,18 @@ function listHeroesDota(){
         })
     })
     .fail((jqXHR, textStatus)=>{
-        Swal.fire({
-            type: 'error',
-            title: `${jqXHR.responseJSON.message}`,
-            animation: false,
-            customClass: {
-              popup: 'animated tada'
-            }
-        })
+        if(jqXHR.responseJSON.message == 'Unauthorized'){
+            userLogout()
+            // console.log(jqXHR.responseJSON.message)
+        }else{
+            Swal.fire({
+                type: 'error',
+                title: `${jqXHR.responseJSON.message}`,
+                animation: false,
+                customClass: {
+                  popup: 'animated tada'
+                }
+            })
+        }
     })
 }
