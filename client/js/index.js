@@ -60,12 +60,13 @@ $(()=>{
     })
    
     $('#dota_link').on('click', () => {
+        $('#page_pokemon').hide()
         $('#search_form').show()
         $('#dota_link').addClass('active')
+        $('#pokemon_link').removeClass('active')
         $('#mobile_legend_link').removeClass('active')
         $("#resultsYoutube").empty()
         $('#myInput').val('')
-
         $('#listRepo').empty()
         $('#loading').show()
         $('#search_form').hide()
@@ -73,12 +74,22 @@ $(()=>{
         listHeroesDota()
     })
 
+    $('#pokemon_link').on('click', () => {
+        $('#search_form').show()
+        $('#dota_link').removeClass('active')
+        $('#pokemon_link').addClass('active')
+        $('#listRepo').empty()
+        $('#loading').show()
+        $('#search_form').hide()
+        $('#list_hero').empty()
+        listPokemon()
+        page_pokemon()
+    })
     $('#mobile_legend_link').on('click', () => {
         $('#dota_link').removeClass('active')
         $('#mobile_legend_link').addClass('active')
         $("#resultsYoutube").empty()
         $('#myInput').val('')
-
         $('#listRepo').empty()
         $('#loading').show()
         $('#search_form').hide()

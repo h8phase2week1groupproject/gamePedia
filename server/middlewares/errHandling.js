@@ -12,6 +12,7 @@ function errHandling(err, req, res, next) {
     else {
         let status = err.status || 500
         let messages = err.messages || 'Internal Server Error!'
+        console.log(err);
         res.status(status).json({
             message: messages
         })

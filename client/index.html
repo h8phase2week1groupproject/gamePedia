@@ -37,6 +37,12 @@
         h2, h3, h5, p, .brand-logo {
             font-family: 'Cabin Sketch', cursive;
         }
+        .row {
+            margin-bottom: 0px;
+            margin-top: 0px;
+            padding-bottom: 0px;
+            padding-top: 0px;
+        }
     </style>
     <title>GamePedia</title>
 </head>
@@ -160,9 +166,9 @@
                     <span id="count_dotaHero" class="badge">
                     </span>Dota
                 </a>
-                <a id="irsyahms" href="#!" class="collection-item">
-                    <span id="count_pikachu" class="badge">
-                    </span>Pikachu
+                <a href="#!" class="collection-item" id="pokemon_link">
+                    <span id="count_pokemon" class="badge">
+                    </span>Pokemon
                 </a>
                 <a id="mobile_legend_link" href="#!" class="collection-item">
                     <span id="count_mobile_legend" class="badge">
@@ -202,7 +208,12 @@
                 </div>
             </div>
 
-            <!-- list -->
+            <!-- Pagination -->
+            <ul id='page_pokemon' class="pagination">
+                
+            </ul>
+
+            <!-- list area -->
             <div class="row" >
                 <ul id="list_hero">
                     <!-- list show here -->
@@ -232,11 +243,15 @@
                     </div>
                 </div>
             </div>
-            
+            <h2 id='title_heroes'></h2>
+            <img id='img_heroes1' src="">
+            <img id='img_heroes2' src="">
+            <div id='detail_heroes'>
+                
+            </div>
             <div id="resultsYoutube">
-                    <!-- youtube result -->
-                </div>
-
+                <!-- youtube result -->
+            </div>
         </div>
     </div>
 
@@ -252,6 +267,7 @@
     <script type="text/javascript" src="./js/index.js"></script>
     <script type="text/javascript" src="./js/user.js"></script>
     <script type="text/javascript" src="./js/dota.js"></script>
+    <script type="text/javascript" src="./js/pokemon.js"></script>
     <script type="text/javascript" src="./js/mobilelegend.js"></script>
     <script type="text/javascript" src="./js/youtube.js"></script>
     <script>
