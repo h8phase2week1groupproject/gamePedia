@@ -64,6 +64,7 @@ $(()=>{
         $('#dota_link').addClass('active')
         $('#mobile_legend_link').removeClass('active')
         $("#resultsYoutube").empty()
+        $('#myInput').val('')
 
         $('#listRepo').empty()
         $('#loading').show()
@@ -76,6 +77,7 @@ $(()=>{
         $('#dota_link').removeClass('active')
         $('#mobile_legend_link').addClass('active')
         $("#resultsYoutube").empty()
+        $('#myInput').val('')
 
         $('#listRepo').empty()
         $('#loading').show()
