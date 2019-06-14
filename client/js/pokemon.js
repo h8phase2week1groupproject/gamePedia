@@ -93,10 +93,13 @@ function page_pokemon(page) {
 }
 
 function getDetailPokemon(pokemonName) {
+    cariVideo(pokemonName, 'pokemon')
+    $('#loading_detail').show()
     $.ajax({
         url: `${serverUrl}/pokeapi/pokemon/?pokeidx=${pokemonName}`,
         method: 'GET',
     }).then((pokemonDetail) => {
+        $('#loading_detail').hide()
         // image
         $('#img_heroes1').attr("src", pokemonDetail.sprites.front_default)       
         $('#img_heroes2').attr("src", pokemonDetail.sprites.back_default)       
@@ -107,17 +110,17 @@ function getDetailPokemon(pokemonName) {
         card_headers.forEach((el) => {
             $('#detail_heroes').append(`
             <div class="row">
-                    <div class="col s12 m12">
-                        <div class="card blue-grey darken-1">
-                            <div class="card-content white-text">
-                                <h4 class="card-title">${el}</h4>
-                                <ul id="${el}_card">
+                <div class="col s12 m12">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                            <h4 class="card-title">${el}</h4>
+                            <ul id="${el}_card">
 
-                                </ul>
-                            </div>
+                            </ul>
                         </div>
                     </div>
                 </div>
+            </div>
             `)
         })
 

@@ -77,16 +77,20 @@ $(()=>{
     $('#pokemon_link').on('click', () => {
         $('#search_form').show()
         $('#dota_link').removeClass('active')
+        $('#mobile_legend_link').removeClass('active')
         $('#pokemon_link').addClass('active')
         $('#listRepo').empty()
         $('#loading').show()
         $('#search_form').hide()
         $('#list_hero').empty()
+        $("#resultsYoutube").empty()
         listPokemon()
         page_pokemon()
     })
+
     $('#mobile_legend_link').on('click', () => {
         $('#dota_link').removeClass('active')
+        $('#pokemon_link').removeClass('active')
         $('#mobile_legend_link').addClass('active')
         $("#resultsYoutube").empty()
         $('#myInput').val('')
