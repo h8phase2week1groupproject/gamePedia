@@ -101,6 +101,22 @@ $(()=>{
         listHeroesMobileLegend()
     })
 
+    $('#clashRoyale_link').on('click', () => {
+        $('#page_pokemon').hide()
+        $('#search_form').show()
+        $('#dota_link').removeClass('active')
+        $('#pokemon_link').removeClass('active')
+        $('#mobile_legend_link').removeClass('active')
+        $('#clashRoyale_link').addClass('active')
+        $("#resultsYoutube").empty()
+        $('#myInput').val('')
+        $('#listRepo').empty()
+        $('#loading').show()
+        $('#search_form').hide()
+        $('#list_hero').empty()
+        listCard()
+    })
+
     $('#brandLogo').on('click', () => {
         if (localStorage.getItem('token')){
             $('#register_page').hide()
