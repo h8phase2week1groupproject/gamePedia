@@ -1,13 +1,14 @@
-function cariVideo(character){
+function cariVideo(character, game){
+    $("#resultsYoutube").empty()
     $('#loading_detail').show()
-    console.log('show youtube', character)
+    console.log('show youtube', character, game)
     $.ajax({
         url:`https://www.googleapis.com/youtube/v3/search`,
         method:'GET',
         data:{
             key:'AIzaSyBLYRr8oVVLltzRbDQ3F9eerFgKbVU1AOc',
             part: "snippet",
-            q: `how to play ${character} dota`,
+            q: `how to play ${character} ${game}`,
             type:"video",
             maxResults: 1,
             order: "viewCount",
