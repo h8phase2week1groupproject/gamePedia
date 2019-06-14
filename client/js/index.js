@@ -62,12 +62,26 @@ $(()=>{
     $('#dota_link').on('click', () => {
         $('#search_form').show()
         $('#dota_link').addClass('active')
+        $('#mobile_legend_link').removeClass('active')
+        $("#resultsYoutube").empty()
+
         $('#listRepo').empty()
         $('#loading').show()
         $('#search_form').hide()
         $('#list_hero').empty()
-
         listHeroesDota()
+    })
+
+    $('#mobile_legend_link').on('click', () => {
+        $('#dota_link').removeClass('active')
+        $('#mobile_legend_link').addClass('active')
+        $("#resultsYoutube").empty()
+
+        $('#listRepo').empty()
+        $('#loading').show()
+        $('#search_form').hide()
+        $('#list_hero').empty()
+        listHeroesMobileLegend()
     })
 
     $('#brandLogo').on('click', () => {
